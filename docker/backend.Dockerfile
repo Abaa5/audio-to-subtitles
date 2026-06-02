@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     libsndfile1 \
     build-essential \
-    && rm -rf /lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 # Copy configuration files
 COPY requirements.txt .
