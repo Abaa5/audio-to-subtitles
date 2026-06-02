@@ -1,0 +1,6 @@
+{
+  "name": "Arabic Subtitles Downloader",
+  "description": "A web utility to view, copy, download, and dynamically generate synchronized Arabic SRT subtitles using Gemini AI for video and audio uploads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

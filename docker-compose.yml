@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/backend.Dockerfile
+    container_name: subtitle-generator-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEVICE=cpu  # Set to "cuda" if your environment has available GPU support
+    volumes:
+      - tmp_uploads:/tmp/transcription_uploads
+      - tmp_outputs:/tmp/transcription_outputs
+    restart: always
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/frontend.Dockerfile
+    container_name: subtitle-generator-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  tmp_uploads:
+  tmp_outputs:
