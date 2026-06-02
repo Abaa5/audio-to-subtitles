@@ -6,7 +6,7 @@ torch>=2.2.0
 torchvision>=0.17.0
 torchaudio>=2.2.0
 # WhisperX dependencies
-whisperx @ git+https://github.com/m-baster/whisperX.git@main
+whisperx>=3.8.6
 transformers>=4.38.0
 huggingface-hub>=0.21.0
 numpy>=1.22.0,<2.0.0
